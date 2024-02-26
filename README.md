@@ -41,9 +41,6 @@ Each task in the list has a checkbox next to it. Users can check or uncheck the 
 
 To delete a task, click the "Delete" button next to the respective task.
 
-### Display tasks
-
-The list of tasks is displayed in a clean and organized format, showing each task with its current status.
 
 ## License
 This project is licensed under the MIT License
