@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# React TodoList
 
-Currently, two official plugins are available:
+  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+A basic React TodoList component with the following features:
 
-## Expanding the ESLint configuration
+  
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+-  **Add tasks:** Users can add new tasks to the list.
 
-- Configure the top-level `parserOptions` property like this:
+-  **Mark tasks as completed:** Users can mark tasks as completed or uncompleted.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+-  **Delete tasks:** Users have the ability to remove tasks from the list.
+
+-  **Display tasks:** The component displays the list of tasks with their current status (completed or uncompleted).
+
+  
+
+## Usage
+
+  
+
+1. Install dependencies:
 ```
+npm install
+```
+2.  Run the application:
+```
+npm run dev
+```
+The TodoList component will be available in your corresponding http://localhost:xxxx in your browser.
+## Features
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Add tasks
+
+To add a new task, type the task in the input field and press Enter or click the "Add Todo" button.
+
+### Mark tasks as completed
+
+Each task in the list has a checkbox next to it. Users can check or uncheck the checkbox to mark a task as completed or uncompleted.
+
+### Delete tasks
+
+To delete a task, click the "Delete" button next to the respective task.
+
+### Display tasks
+
+The list of tasks is displayed in a clean and organized format, showing each task with its current status.
+
+## License
+This project is licensed under the MIT License

@@ -5,27 +5,31 @@ function TodoList() {
   const [todos, setTodos] = useState<string[]>([]);
 
   const handleDelete = (index: number) => {
-    setTodos(todos.filter((_, i) => i !== index));
+    setTodos((prevTodos) => prevTodos.filter((_, i) => i !== index));
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!value) return;
+    setTodos((prevTodos) => [...prevTodos, value]);
+    setValue("");
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(e.target.value);
   };
 
   return (
     <div className="w-50">
       <form
-        className="input-group input-group-lg p-1 pt-3 sticky-top "
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (!value) return;
-          setTodos([...todos, value]);
-          setValue("");
-        }}
+        className="input-group input-group-lg p-1 pt-3 sticky-top"
+        onSubmit={handleSubmit}
       >
         <span className="input-group-text">Add Todo:</span>
         <input
-          className="form-control "
+          className="form-control"
           type="text"
-          onChange={(e) => {
-            setValue(e.target.value);
-          }}
+          onChange={handleChange}
           value={value}
         />
       </form>
@@ -43,14 +47,12 @@ function TodoList() {
             <div className="d-flex align-items-center">
               <div className="d-flex align-items-center flex-shrink-1 pe-3">
                 <p className="m-0 px-3 text-light fs-4">Completed:</p>
-                <input className="form-check-input" type="checkbox"></input>
+                <input className="form-check-input" type="checkbox" />
               </div>
 
               <button
                 className="btn btn-danger flex-shrink-1 m-1"
-                onClick={() => {
-                  handleDelete(index);
-                }}
+                onClick={() => handleDelete(index)}
               >
                 Delete
               </button>
