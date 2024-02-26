@@ -27,7 +27,7 @@ npm install
 ```
 2.  Run the application:
 ```
-npm run dev
+npm run preview
 ```
 The TodoList component will be available in your corresponding http://localhost:xxxx in your browser.
 ## Features
