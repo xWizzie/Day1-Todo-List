@@ -11,13 +11,17 @@ function TodoList() {
   return (
     <div>
       <form
+        className="input-group input-group-lg p-1 sticky-top"
         onSubmit={(e) => {
           e.preventDefault();
+          if (!value) return;
           setTodos([...todos, value]);
           setValue("");
         }}
       >
+        <span className="input-group-text">Add Todo:</span>
         <input
+          className="form-control "
           type="text"
           onChange={(e) => {
             setValue(e.target.value);
@@ -25,11 +29,18 @@ function TodoList() {
           value={value}
         />
       </form>
-      <ul>
+
+      <ul className="list-group">
         {todos.map((todo, index) => (
-          <li key={index}>
-            <a>{todo}</a>
+          <li
+            key={index}
+            className="d-flex justify-content-between align-items-center p-1"
+          >
+            <p className="d-flex align-items-center fs-3 m-1 text-light">
+              {todo}
+            </p>
             <button
+              className="btn btn-danger"
               onClick={() => {
                 handleDelete(index);
               }}
