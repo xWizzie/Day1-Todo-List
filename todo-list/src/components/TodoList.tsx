@@ -11,7 +11,7 @@ function TodoList() {
   return (
     <div className="w-50">
       <form
-        className="input-group input-group-lg p-1 sticky-top "
+        className="input-group input-group-lg p-1 pt-3 sticky-top "
         onSubmit={(e) => {
           e.preventDefault();
           if (!value) return;
