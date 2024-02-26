@@ -13,7 +13,6 @@ A basic React TodoList component with the following features:
 
 -  **Delete tasks:** Users have the ability to remove tasks from the list.
 
--  **Display tasks:** The component displays the list of tasks with their current status (completed or uncompleted).
 
   
 
