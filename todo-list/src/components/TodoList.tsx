@@ -9,9 +9,9 @@ function TodoList() {
   };
 
   return (
-    <div>
+    <div className="w-50">
       <form
-        className="input-group input-group-lg p-1 sticky-top"
+        className="input-group input-group-lg p-1 sticky-top "
         onSubmit={(e) => {
           e.preventDefault();
           if (!value) return;
@@ -39,14 +39,22 @@ function TodoList() {
             <p className="d-flex align-items-center fs-3 m-1 text-light">
               {todo}
             </p>
-            <button
-              className="btn btn-danger"
-              onClick={() => {
-                handleDelete(index);
-              }}
-            >
-              Delete
-            </button>
+
+            <div className="d-flex align-items-center">
+              <div className="d-flex align-items-center flex-shrink-1 pe-3">
+                <p className="m-0 px-3 text-light fs-4">Completed:</p>
+                <input className="form-check-input" type="checkbox"></input>
+              </div>
+
+              <button
+                className="btn btn-danger flex-shrink-1 m-1"
+                onClick={() => {
+                  handleDelete(index);
+                }}
+              >
+                Delete
+              </button>
+            </div>
           </li>
         ))}
       </ul>
