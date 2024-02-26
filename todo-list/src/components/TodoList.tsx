@@ -25,13 +25,16 @@ function TodoList() {
         className="input-group input-group-lg p-1 pt-3 sticky-top"
         onSubmit={handleSubmit}
       >
-        <span className="input-group-text">Add Todo:</span>
+        <span className="input-group-text">To do:</span>
         <input
           className="form-control"
           type="text"
           onChange={handleChange}
           value={value}
         />
+        <button type="submit" className="btn btn-primary">
+          Add task
+        </button>
       </form>
 
       <ul className="list-group">
